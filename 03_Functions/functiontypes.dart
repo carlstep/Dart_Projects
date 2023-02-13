@@ -30,6 +30,12 @@ double convertCurrency(double amount, double rateA) {
   return amount * rateA;
 }
 
+// Parameter AND Return Type - #3
+double calculateInterest(double principal, double rate, double time) {
+  double interest = principal * rate * time / 100;
+  return interest;
+}
+
 void main() {
 // - No Parameter AND No Return Type
 // - no arguments being passed to the function.
@@ -63,4 +69,11 @@ void main() {
 // Parameter AND Return Type - #2
   double conversion = convertCurrency(56000, 0.000248);
   print('the KHR amount in USD is $conversion');
+
+// Parameter AND Return Type - #3
+  double principal = 5000;
+  double time = 3;
+  double rate = 4;
+  double result = calculateInterest(principal, rate, time);
+  print('the simple interest is $result');
 }
