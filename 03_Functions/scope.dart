@@ -1,5 +1,5 @@
 // example of - global scope
-String globalText = 'text outside main(), is global. can be access elsewhere.';
+String globalText = 'text outside main(), is global. can access elsewhere.';
 double pi = 3.14;
 
 void main() {
