@@ -1,16 +1,44 @@
-import 'dart:io';
+void main() {
+  var countryOne = CountryData('France', 1.13, 'EUR');
+  //print(countryOne);
+  //print(countryOne.countryName);
 
-void convertA(
-    double currencyAValue, double currencyBRate, double currencyCRate) {
-  double conversionB = currencyAValue * currencyBRate;
-  double conversionC = currencyAValue * currencyCRate;
-  print('$currencyAValue KRH is... \n$conversionB USD \n$conversionC THB');
+  //print(countryOne.toJson());
+
+  var countryTwo = CountryData('Japan', 8.45, 'JPY');
+  var countryThree = CountryData('South Korea', 5.6, 'KOR');
+
+  var countryList = [];
+
+  countryList.add(countryOne.toJson());
+  countryList.add(countryTwo.toJson());
+  countryList.add(countryThree.toJson());
+
+  print(countryList);
+
+  for (int i = 0; i < countryList.length; i++) {
+    print(countryList[i]['country']);
+    print(countryList[i]['currency']);
+  }
 }
 
-void main() {
-  double currencyAValueX = 48000;
-  double currencyBRateX = 0.00025;
-  double currencyCRateX = 0.0034;
+// class
+class CountryData {
+  String countryName;
+  double amount;
+  String currencyCode;
 
-  convertA(currencyAValueX, currencyBRateX, currencyCRateX);
+  CountryData(
+    this.countryName,
+    this.amount,
+    this.currencyCode,
+  );
+
+  Map<String, dynamic> toJson() {
+    return {
+      'country': countryName,
+      'fxRate': amount,
+      'currency': currencyCode,
+    };
+  }
 }
