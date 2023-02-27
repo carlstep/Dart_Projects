@@ -1,5 +1,6 @@
 import 'bicycle.dart';
 import 'object_oop.dart';
+import 'interest.dart';
 
 void main() {
   Camera c1 = Camera();
@@ -46,4 +47,13 @@ void main() {
 
   b1.changeGear(24);
   b1.displayBicycleInfo();
+
+  Interest simpleInterest = Interest();
+
+  simpleInterest.principal = 5000;
+  simpleInterest.time = 3;
+  simpleInterest.rate = 2;
+
+  double calculateInterest = simpleInterest.calculate();
+  print('the simple interest is $calculateInterest');
 }

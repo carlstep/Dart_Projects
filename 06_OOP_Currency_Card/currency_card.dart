@@ -27,6 +27,5 @@ class CurrencyCard {
 
   double? convertToUSD() {
     return usdValue = amount! * toUsdFxRate!;
-    double? convertedAmount = usdValue;
   }
 }
