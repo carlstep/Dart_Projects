@@ -48,11 +48,11 @@ class Resident {
   int? aptNumber;
 
   Resident({
-    required this.name,
-    this.developmentName = 'Wellington',
-    this.developmentLocation = 'Bristol',
-    required this.blockNumber,
-    this.aptNumber,
+    required this.name, // required parameter
+    this.developmentName = 'Wellington', // default parameter value
+    this.developmentLocation = 'Bristol', // default parameter value
+    required this.blockNumber, // required parameter
+    this.aptNumber, // not required > optional
   });
 
   void printResidentDetails() {
@@ -63,24 +63,26 @@ class Resident {
 }
 
 void main() {
-  ClassName classOne = ClassName(101, 'Science');
+  ClassName classOne = ClassName(101, 'Science'); // parameter values
 
   print('${classOne.classSubject} / Class #${classOne.classNumber.toString()}');
 
-  Student student = Student('Peter', 23000432, 18);
+  Student student = Student('Peter', 23000432, 18); // parameter values
   student.displayStudentInfo();
 
-  Staff kitchenEmployee1 =
-      Staff(name: 'Glenn', empNumber: 30023, salary: 13000);
+  Staff kitchenEmployee1 = Staff(
+      name: 'Glenn', empNumber: 30023, salary: 13000); // named parameter values
   kitchenEmployee1.displayStaffInfo();
-  Staff kitchenEmployee2 =
-      Staff(name: 'Wendy', empNumber: 30024, salary: 13700);
+  Staff kitchenEmployee2 = Staff(
+      name: 'Wendy', empNumber: 30024, salary: 13700); // named parameter values
   kitchenEmployee2.displayStaffInfo();
 
-  Staff maintenance1 = Staff(name: 'Jessy', empNumber: 50012, salary: 19000);
+  Staff maintenance1 = Staff(
+      name: 'Jessy', empNumber: 50012, salary: 19000); // named parameter values
   maintenance1.displayStaffInfo();
 
   Resident resident1 = Resident(
+    // named parameter values
     name: 'Helen C',
     aptNumber: 3,
     blockNumber: 2,
@@ -88,9 +90,9 @@ void main() {
   resident1.printResidentDetails();
 
   Resident resident2 = Resident(
-    name: 'James D',
-    aptNumber: 4,
-    blockNumber: 3,
+    name: 'James D', // required parameter
+    aptNumber: 4, // not required > optional
+    blockNumber: 3, // required parameter
   );
   resident2.printResidentDetails();
 
