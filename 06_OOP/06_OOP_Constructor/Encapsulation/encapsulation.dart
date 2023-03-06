@@ -12,7 +12,7 @@ class Employee {
     return _id!;
   }
 
-  // Getter method for _name property
+  // Set method for _name property
   set name(String name) => this._name = name;
 
   // Getter method for _age property

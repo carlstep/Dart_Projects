@@ -1,31 +1,22 @@
-import 'dart:io';
-
 class CurrencyCard {
-  String? currencyCode;
-  String? currencyCountry;
-  double? toUsdFxRate;
-  double? amount = 0.0;
-  double? usdValue = 0.0;
-  double? converted;
+  // private properties
+  String? _currencyCode;
+  String? _country;
+  double? _toUsdFxRate;
 
-  void getUserAmount() {
-    print('enter the amount to exchange to USD');
-    double? userInput = double.parse(stdin.readLineSync()!);
-    amount = userInput;
-    print('You want to exchange $amount $currencyCode to USD');
-  }
+  // constructor
+  CurrencyCard(this._currencyCode, this._country, this._toUsdFxRate);
 
-  void changeUsdFxRate(double newUsdFxRate) {
-    toUsdFxRate = newUsdFxRate;
-  }
+  // getters
+  String get currencyCode => _currencyCode!;
+  String get country => _country!;
+  double? get toUsdFxRate => _toUsdFxRate;
 
-  void displayCurrencyData() {
-    print('Currency Code: $currencyCode');
-    print('Currency Country: $currencyCountry');
-    print('Exchange Rate to USD: $toUsdFxRate');
-  }
-
-  double? convertToUSD() {
-    return usdValue = amount! * toUsdFxRate!;
+  Map<String, dynamic> get map {
+    return {
+      'currencyCode': _currencyCode,
+      'country': _country,
+      'USDRate': _toUsdFxRate
+    };
   }
 }
